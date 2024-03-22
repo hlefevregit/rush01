@@ -6,7 +6,7 @@
 #    By: hlefevre <hlefevre@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/22 21:05:28 by hlefevre          #+#    #+#              #
-#    Updated: 2024/03/22 21:07:14 by hlefevre         ###   ########.fr        #
+#    Updated: 2024/03/22 21:24:44 by hlefevre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ FILES =	./src/ft_atoi.c \
 		./src/ft_putchar.c \
 		./src/ft_putstr.c \
 		./src/rush01.c \
+		./src/checks.c \
 
 OBJ = ${FILES:.c=.o}
 
