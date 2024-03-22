@@ -6,31 +6,35 @@
 /*   By: hlefevre <hlefevre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 20:37:25 by hlefevre          #+#    #+#             */
-/*   Updated: 2024/03/22 21:22:45 by hlefevre         ###   ########.fr       */
+/*   Updated: 2024/03/22 21:43:22 by hlefevre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush01.h"
 
-void	play_game(t_bord *bord)
+void	play_game(t_bord *bord, char **av)
 {
-	
+	int	i;
+
+	i = 0;
+	while (av[i])
+	{
+		if (av[i][0] == '4')
+			return (i);
+	}
 }
 
 void	rush01(char **av)
 {
-	int		x;
-	int		y;
 	t_bord	*bord;
 
-	x = 4;
-	y = 4;
 	if (check_arg(av) == 1)
 	{
 		init_bord(bord, av);
+		init_matrix(bord);
 		if (check_plate_is_doable(bord) != 0)
 			ft_putstr("Error\n");
-		play_game(bord);
+		play_game(bord, av);
 	}
 	else
 		ft_putstr("Error\n");
