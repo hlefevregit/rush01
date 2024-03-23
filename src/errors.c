@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_bord.c                                        :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/22 20:53:34 by hlefevre          #+#    #+#             */
-/*   Updated: 2024/03/23 16:22:38 by hulefevr         ###   ########.fr       */
+/*   Created: 2024/03/23 13:50:07 by hulefevr          #+#    #+#             */
+/*   Updated: 2024/03/23 13:51:13 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush01.h"
 
-void    init_matrix(t_bord game)
+int	ft_error(char *str)
 {
-	int  i;
-
-	i = 0;
-	while (i < 16)
-	{
-        game.matrix.space[i] = "0";
-        printf("space[%i] = %s\n", i, game.matrix.space[i]);
-	    i++;
-	}
+	ft_putstr(str);
+	return (0);
 }

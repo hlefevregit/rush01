@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hlefevre <hlefevre@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 21:02:12 by hlefevre          #+#    #+#             */
-/*   Updated: 2024/03/22 21:03:02 by hlefevre         ###   ########.fr       */
+/*   Updated: 2024/03/23 16:44:16 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putstr(char *str)
 	i = 0;
 	while (str[i])
 	{
-		ft_putchar(str[i]);
+		write(1, &str[i], 1);
 		i++;
 	}
 }

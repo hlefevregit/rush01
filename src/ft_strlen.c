@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_bord.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/22 20:53:34 by hlefevre          #+#    #+#             */
-/*   Updated: 2024/03/23 16:22:38 by hulefevr         ###   ########.fr       */
+/*   Created: 2024/03/23 11:51:54 by hulefevr          #+#    #+#             */
+/*   Updated: 2024/03/23 14:22:25 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush01.h"
 
-void    init_matrix(t_bord game)
+size_t	ft_strlen(const char *str)
 {
-	int  i;
+	size_t	i;
 
 	i = 0;
-	while (i < 16)
-	{
-        game.matrix.space[i] = "0";
-        printf("space[%i] = %s\n", i, game.matrix.space[i]);
-	    i++;
-	}
+	while (str[i])
+		i++;
+	return (i);
+}
+
+int	ft_strlen_double(char **av)
+{
+	int	i;
+
+	i = 0;
+	while (av[i] != NULL)
+		i++;
+	return (i);
 }

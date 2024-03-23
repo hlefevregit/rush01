@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rush01.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hlefevre <hlefevre@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 20:38:02 by hlefevre          #+#    #+#             */
-/*   Updated: 2024/03/22 21:37:30 by hlefevre         ###   ########.fr       */
+/*   Updated: 2024/03/23 16:28:09 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,65 +18,46 @@
 # include <stdio.h>
 # include <string.h>
 
+# define DEBUG (printf("DEBUG"))
+
 typedef struct s_matrix
 {
-	char	space1;
-	char	space2;
-	char	space3;
-	char	space4;
-	char	space5;
-	char	space6;
-	char	space7;
-	char	space8;
-	char	space9;
-	char	space10;
-	char	space11;
-	char	space12;
-	char	space13;
-	char	space14;
-	char	space15;
-	char	space16;
+	char	*space[16];
 }		t_matrix;
 
 typedef struct s_bord
 {
-	int	col1up;
-	int	col2up;
-	int	col3up;
-	int	col4up;
-	int	col1down;
-	int	col2down;
-	int	col3down;
-	int	col4down;
-	int	raw1left;
-	int	raw2left;
-	int	raw3left;
-	int	raw4left;
-	int	raw1right;
-	int	raw2right;
-	int	raw3right;
-	int	raw4right;
+	char	**tab;
 
-	t_matrix	*matrix;
+	t_matrix	matrix;
 }		t_bord;
 
 /***************** RUSH01 ****************/
 
-void    init_bord(t_bord *game, char **av);
-void    init_matrix(t_bord *bord);
-void	play_game(t_bord *bord);
+void    init_matrix(t_bord game);
+void	play_game(t_bord game);
+void	free_game_tab(char **tab);
+void	print_4s(t_bord game, int index);
+void	print_matrix(t_bord game);
 
 int		check_arg(char **av);
-int		check_plate_is_doable(t_bord *bord);
-int		check_sum(t_bord *bord);
-int		check_good_value_col(t_bord *bord);
-int		check_good_value_raw(t_bord *bord);
+int		check_plate_is_doable(t_bord bord);
+int		check_sum_col(t_bord bord);
+int		check_sum_raw(t_bord bord);
+int		check_good_value(t_bord bord);
+int		ft_error(char *str);
+int		check_for4s(t_bord game, int i);
 
 /*****************************************/
 
 /***************** LIBFT *****************/
 
 int		ft_atoi(const char *str);
+int		ft_strlen_double(char **av);
+
+size_t	ft_strlen(const char *str);
+
+char	**ft_split(const char *s, char c);
 
 void	ft_putstr(char *str);
 void	ft_putchar(char c);

@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_bord.c                                        :+:      :+:    :+:   */
+/*   print_matrix.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/22 20:53:34 by hlefevre          #+#    #+#             */
-/*   Updated: 2024/03/23 16:22:38 by hulefevr         ###   ########.fr       */
+/*   Created: 2024/03/23 16:26:01 by hulefevr          #+#    #+#             */
+/*   Updated: 2024/03/23 16:48:59 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush01.h"
 
-void    init_matrix(t_bord game)
+void	print_matrix(t_bord game)
 {
-	int  i;
+	int	i;
 
 	i = 0;
-	while (i < 16)
+	while (i <= 15)
 	{
-        game.matrix.space[i] = "0";
-        printf("space[%i] = %s\n", i, game.matrix.space[i]);
-	    i++;
+		printf("i value : %i\n", i);
+		ft_putchar(game.matrix.space[i][0]);
+		ft_putchar(' ');
+		/*if ((i + 1) % 4 == 0)
+			ft_putchar('\n');*/
+		i++;
 	}
 }
