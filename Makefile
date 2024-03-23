@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+         #
+#    By: hlefevre <hlefevre@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/22 21:05:28 by hlefevre          #+#    #+#              #
-#    Updated: 2024/03/23 17:50:03 by hulefevr         ###   ########.fr        #
+#    Updated: 2024/03/23 20:34:26 by hlefevre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,9 @@ FILES =	./src/ft_atoi.c \
 		./src/errors.c \
 		./src/game_checks.c \
 		./src/print_numbers4.c \
+		./src/print_number1.c \
 		./src/print_matrix.c \
+		./src/backtracktest.c \
 
 OBJ = ${FILES:.c=.o}
 

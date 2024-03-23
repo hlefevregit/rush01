@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rush01.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hlefevre <hlefevre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 20:37:25 by hlefevre          #+#    #+#             */
-/*   Updated: 2024/03/23 18:02:08 by hulefevr         ###   ########.fr       */
+/*   Updated: 2024/03/23 20:41:54 by hlefevre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,21 @@ t_bord	play_game(t_bord game)
 			print_matrix(game);
 		}
 	}
+	index = 0;
+	printf("Changement de finder \n");
+	index = check_for1s(game, index);
+	if (index >= 0)
+	{
+		while (index >= 0)
+		{
+			printf("index = %i\n", index);
+			game = print_1s(game, index);
+			index = check_for1s(game, index + 1);
+			i++;
+			print_matrix(game);
+		}
+	}
+	ft_putchar('\n');
 	return (game);
 }
 
@@ -50,7 +65,6 @@ void	rush01(char **av)
 	else
 		ft_putstr("Error\n");
 	free_game_tab(game.tab);
-	free(*game.matrix.space);
 }
 
 int	main(int ac, char **av)

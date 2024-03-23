@@ -1,35 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game_checks.c                                      :+:      :+:    :+:   */
+/*   backtracktest.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlefevre <hlefevre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/23 14:38:17 by hulefevr          #+#    #+#             */
-/*   Updated: 2024/03/23 20:37:35 by hlefevre         ###   ########.fr       */
+/*   Created: 2024/03/23 20:05:55 by hlefevre          #+#    #+#             */
+/*   Updated: 2024/03/23 20:33:54 by hlefevre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush01.h"
-
-int	check_for4s(t_bord game, int i)
+/*
+int	is_valid(t_bord game)
 {
-	while (game.tab[i])
+	int	x;
+	int	y;
+	int	i;
+	char	test;
+
+	i = 0;
+	while (i < 16)
 	{
-		if (game.tab[i][0] == '4')
-			return (i);
-		i++;
+		x = 0;
+		while (x < 4)
+		{
+			test = game.matrix.space[x + i][0];
+			y = x + 1;
+			while (y < 4)
+			{
+				if (game.matrix.space[y + i][0] == test)
+					return (0);
+				y++;
+			}
+			x++;
+		}
+		i += 4;
 	}
-	return (-1);
+	return (1);
 }
 
-int	check_for1s(t_bord game, int i)
+backtracking(t_bord game)
 {
-	while (game.tab[i])
-	{
-		if (game.tab[i][0] == '1')
-			return (i);
-		i++;
-	}
-	return (-1);
-}
+	if (is_valid(game) == 0)
+		retry_game(game);
+	
+}*/

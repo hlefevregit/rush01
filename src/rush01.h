@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rush01.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hlefevre <hlefevre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 20:38:02 by hlefevre          #+#    #+#             */
-/*   Updated: 2024/03/23 18:02:40 by hulefevr         ###   ########.fr       */
+/*   Updated: 2024/03/23 20:22:33 by hlefevre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,16 @@ typedef struct s_matrix
 typedef struct s_bord
 {
 	char	**tab;
-
+	int		error;
 	t_matrix	matrix;
 }		t_bord;
 
 /***************** RUSH01 ****************/
 
 t_bord	init_matrix(t_bord game);
-t_bord	print_4s(t_bord game, int index);
 t_bord	play_game(t_bord game);
+t_bord	print_1s(t_bord game, int index);
+t_bord	print_4s(t_bord game, int index);
 
 void	free_game_tab(char **tab);
 void	print_matrix(t_bord game);
@@ -48,6 +49,7 @@ int		check_sum_raw(t_bord bord);
 int		check_good_value(t_bord bord);
 int		ft_error(char *str);
 int		check_for4s(t_bord game, int i);
+int		check_for1s(t_bord game, int i);
 
 /*****************************************/
 

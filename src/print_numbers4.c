@@ -33,6 +33,13 @@ t_bord	print_4s_col(t_bord game, int index)
 
 t_bord	print4raws_part2(t_bord game, int index)
 {
+	if (index == 12)
+	{
+		game.matrix.space[index - 9] = "1";
+		game.matrix.space[index - 10] = "2";
+		game.matrix.space[index - 11] = "3";
+		game.matrix.space[index - 12] = "4";
+	}
 	if (index == 13)
 	{
 		game.matrix.space[index - 6] = "1";
@@ -57,21 +64,35 @@ t_bord	print4raws_part2(t_bord game, int index)
 	return (game);
 }
 
-t_bord	print_4s_raw(t_bord game,int index)
+t_bord	print_4s_raw(t_bord game, int index)
 {
-	if (index <= 11)
+	if (index == 8)
 	{
-		game.matrix.space[index] = "1";
-		game.matrix.space[index + 1] = "2";
-		game.matrix.space[index + 2] = "3";
-		game.matrix.space[index + 3] = "4";
+		game.matrix.space[0] = "1";
+		game.matrix.space[1] = "2";
+		game.matrix.space[2] = "3";
+		game.matrix.space[3] = "4";
 	}
-	if (index == 12)
+	if (index == 9)
 	{
-		game.matrix.space[index - 9] = "1";
-		game.matrix.space[index - 10] = "2";
-		game.matrix.space[index - 11] = "3";
-		game.matrix.space[index - 12] = "4";
+		game.matrix.space[4] = "1";
+		game.matrix.space[5] = "2";
+		game.matrix.space[6] = "3";
+		game.matrix.space[7] = "4";
+	}
+	if (index == 10)
+	{
+		game.matrix.space[8] = "1";
+		game.matrix.space[9] = "2";
+		game.matrix.space[10] = "3";
+		game.matrix.space[11] = "4";
+	}
+	if (index == 11)
+	{
+		game.matrix.space[12] = "1";
+		game.matrix.space[13] = "2";
+		game.matrix.space[14] = "3";
+		game.matrix.space[15] = "4";
 	}
 	game = print4raws_part2(game, index);
 	return (game);
