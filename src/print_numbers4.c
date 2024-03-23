@@ -12,7 +12,7 @@
 
 #include "rush01.h"
 
-void	print_4s_col(t_bord game, int index)
+t_bord	print_4s_col(t_bord game, int index)
 {
 	if (index <= 3)
 	{
@@ -28,9 +28,10 @@ void	print_4s_col(t_bord game, int index)
 		game.matrix.space[index + 0] = "3";
 		game.matrix.space[index - 4] = "4";
 	}
+	return (game);
 }
 
-void	print4raws_part2(t_bord game, int index)
+t_bord	print4raws_part2(t_bord game, int index)
 {
 	if (index == 13)
 	{
@@ -53,9 +54,10 @@ void	print4raws_part2(t_bord game, int index)
 		game.matrix.space[index - 2] = "3";
 		game.matrix.space[index - 3] = "4";
 	}
+	return (game);
 }
 
-void	print_4s_raw(t_bord game,int index)
+t_bord	print_4s_raw(t_bord game,int index)
 {
 	if (index <= 11)
 	{
@@ -71,13 +73,15 @@ void	print_4s_raw(t_bord game,int index)
 		game.matrix.space[index - 11] = "3";
 		game.matrix.space[index - 12] = "4";
 	}
-	print4raws_part2(game, index);
+	game = print4raws_part2(game, index);
+	return (game);
 }
 
-void	print_4s(t_bord game, int index)
+t_bord	print_4s(t_bord game, int index)
 {
 	if (index < 8)
-		print_4s_col(game, index);
+		game = print_4s_col(game, index);
 	if (index >= 8 && index <= 15)
-		print_4s_raw(game, index);
+		game = print_4s_raw(game, index);
+	return (game);
 }

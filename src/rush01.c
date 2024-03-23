@@ -6,13 +6,13 @@
 /*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 20:37:25 by hlefevre          #+#    #+#             */
-/*   Updated: 2024/03/23 16:36:13 by hulefevr         ###   ########.fr       */
+/*   Updated: 2024/03/23 18:02:08 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush01.h"
 
-void	play_game(t_bord game)
+t_bord	play_game(t_bord game)
 {
 	int	index;
 	int	i;
@@ -25,11 +25,13 @@ void	play_game(t_bord game)
 		while (index >= 0)
 		{
 			printf("index = %i\n", index);
-			print_4s(game, index);
+			game = print_4s(game, index);
 			index = check_for4s(game, index + 1);
 			i++;
+			print_matrix(game);
 		}
 	}
+	return (game);
 }
 
 void	rush01(char **av)
@@ -39,10 +41,10 @@ void	rush01(char **av)
 	game.tab = ft_split(av[1], 32);
 	if (check_arg(game.tab) == 1)
 	{
-		init_matrix(game);
+		game = init_matrix(game);
 		if (check_plate_is_doable(game) == 0)
 			ft_putstr("Error1\n");
-		play_game(game);
+		game = play_game(game);
 		print_matrix(game);
 	}
 	else

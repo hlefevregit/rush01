@@ -6,7 +6,7 @@
 /*   By: hulefevr <hulefevr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 20:38:02 by hlefevre          #+#    #+#             */
-/*   Updated: 2024/03/23 16:28:09 by hulefevr         ###   ########.fr       */
+/*   Updated: 2024/03/23 18:02:40 by hulefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ typedef struct s_bord
 
 /***************** RUSH01 ****************/
 
-void    init_matrix(t_bord game);
-void	play_game(t_bord game);
+t_bord	init_matrix(t_bord game);
+t_bord	print_4s(t_bord game, int index);
+t_bord	play_game(t_bord game);
+
 void	free_game_tab(char **tab);
-void	print_4s(t_bord game, int index);
 void	print_matrix(t_bord game);
 
 int		check_arg(char **av);
